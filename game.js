@@ -15,11 +15,11 @@ function enterApp() {
 let lists = [];
 let currentListId = null;
 
-let defaultList = {
-  id: "list_" + Date.now(),
-  name: "List 1",
-  words: ["owl", "snow", "cried", "field", "glass", "chain", "queen", "love"],
-};
+let defaultLists = [
+  { id: "list_1", name: "Week 2", words: ["zoo","grew","glue","tube","soup","have","give","live","catch","milk"] },
+  { id: "list_2", name: "Week 3", words: ["hurt","girl","summer","early","slept","pull","hutch","kitchen","friend","school"] },
+  { id: "list_3", name: "Week 4", words: ["for","short","crawl","saw","wore","august","shore","score","next","we"] },
+];
 
 let playList = [];
 let currentIndex = 0;
@@ -249,7 +249,7 @@ function loadLists() {
   if (stored) {
     lists = JSON.parse(stored);
   } else {
-    lists = [defaultList];
+    lists = defaultLists;
   }
   if (lists.length > 0) currentListId = lists[0].id;
 }
