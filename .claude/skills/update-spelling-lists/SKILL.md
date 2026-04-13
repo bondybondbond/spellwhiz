@@ -1,16 +1,16 @@
 Update SpellWhiz spelling lists with new words, emojis, git commit, and zip.
 
-Input format: week label followed by comma-separated words, one week per line. Example:
-  Week 2: zoo, grew, glue, tube, soup, have, give, live, catch, milk
-  Week 3: hurt, girl, summer, early, slept, pull, hutch, kitchen, friend, school
-  Week 4: for, short, crawl, saw, wore, august, shore, score, next, we
+Input is typically a screenshot of a spelling sheet — each column maps to a week (e.g. Week 2, Week 3, Week 4). Read the words directly from the image.
+
+If provided as text instead: week label followed by comma-separated words, one week per line.
 
 $ARGUMENTS
 
 ## Steps
 
 ### 1. Parse the input
-- Extract each week's label and word list from $ARGUMENTS
+- If $ARGUMENTS contains an image, read the words from each column and assign week labels in order (Week 2, Week 3, Week 4 — or as labelled)
+- If text, extract each week's label and word list
 - Normalise all words to lowercase
 
 ### 2. Add missing emojis to `emojiData.js`
