@@ -15,6 +15,8 @@ function enterApp() {
 let lists = [];
 let currentListId = null;
 
+const LIST_VERSION = "summer2";
+
 let defaultLists = [
   { id: "list_1", name: "Week 2", words: ["cats","dogs","shops","rocks","pigs","rooms","birds","rats","i'm","don't"] },
   { id: "list_2", name: "Week 3", words: ["catches","watches","washes","fetches","bunches","buzzes","fusses","stitches","time","about"] },
@@ -248,10 +250,13 @@ function getEmoji(word) {
 // --- LIST MANAGEMENT (LocalStorage) ---
 function loadLists() {
   const stored = localStorage.getItem("spellWhizLists");
-  if (stored) {
+  const storedVersion = localStorage.getItem("spellWhizListVersion");
+  if (stored && storedVersion === LIST_VERSION) {
     lists = JSON.parse(stored);
   } else {
-    lists = defaultLists;
+    lists = JSON.parse(JSON.stringify(defaultLists));
+    localStorage.setItem("spellWhizLists", JSON.stringify(lists));
+    localStorage.setItem("spellWhizListVersion", LIST_VERSION);
   }
   if (lists.length > 0) currentListId = lists[0].id;
 }
