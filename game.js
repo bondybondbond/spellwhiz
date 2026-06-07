@@ -16,9 +16,11 @@ let lists = [];
 let currentListId = null;
 
 let defaultLists = [
-  { id: "list_1", name: "Week 2", words: ["zoo","grew","glue","tube","soup","have","give","live","catch","milk"] },
-  { id: "list_2", name: "Week 3", words: ["hurt","girl","summer","early","slept","pull","hutch","kitchen","friend","school"] },
-  { id: "list_3", name: "Week 4", words: ["for","short","crawl","saw","wore","august","shore","score","next","we"] },
+  { id: "list_1", name: "Week 2", words: ["cats","dogs","shops","rocks","pigs","rooms","birds","rats","i'm","don't"] },
+  { id: "list_2", name: "Week 3", words: ["catches","watches","washes","fetches","bunches","buzzes","fusses","stitches","time","about"] },
+  { id: "list_3", name: "Week 4", words: ["helping","helped","helper","playing","played","player","quicker","quickest","day","came"] },
+  { id: "list_4", name: "Week 5", words: ["football","playground","farmyard","bedroom","blackberry","armchair","bedtime","airport","make","very"] },
+  { id: "list_5", name: "Week 6", words: ["petals","fruit","roots","most","least","add","bulb","seed","subtract","branches"] },
 ];
 
 let playList = [];
