@@ -486,31 +486,40 @@ function updateProgressUI() {
 
 function renderBlocks() {
   const container = document.getElementById("block-area");
-  container.innerHTML = "";
-  const targetLen = playList[currentIndex].word.length;
-  for (let i = 0; i < targetLen; i++) {
-    let letter = currentInput[i] || "";
-    let block = document.createElement("div");
-    block.className = "letter-block";
-    if (letter) block.classList.add("filled");
-    block.innerText = letter;
-    container.appendChild(block);
+  container.replaceChildren();
+  const word = playList[currentIndex].word;
+  let inputIdx = 0;
+  for (let i = 0; i < word.length; i++) {
+    if (word[i] === "'") {
+      let marker = document.createElement("span");
+      marker.className = "apostrophe-marker";
+      marker.textContent = "'";
+      container.appendChild(marker);
+    } else {
+      let letter = currentInput[inputIdx++] || "";
+      let block = document.createElement("div");
+      block.className = "letter-block";
+      if (letter) block.classList.add("filled");
+      block.innerText = letter;
+      container.appendChild(block);
+    }
   }
 }
 
 function handleKey(key) {
   const targetWord = playList[currentIndex].word;
+  const strippedTarget = targetWord.replace(/'/g, "");
   if (key === "DEL") {
     currentInput = currentInput.slice(0, -1);
     renderBlocks();
     return;
   }
-  if (currentInput.length < targetWord.length) {
+  if (currentInput.length < strippedTarget.length) {
     currentInput += key;
     speakLetter(key);
     // Removed Phonics Hint call
     renderBlocks();
-    if (currentInput.length === targetWord.length) setTimeout(commitWord, 300);
+    if (currentInput.length === strippedTarget.length) setTimeout(commitWord, 300);
   }
 }
 
@@ -519,7 +528,7 @@ function commitWord() {
   results.push({
     target: target,
     input: currentInput,
-    correct: currentInput === target,
+    correct: currentInput === target.replace(/'/g, ""),
     emoji: playList[currentIndex].emoji,
   });
   currentIndex++;

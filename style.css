@@ -659,6 +659,14 @@ h2 {
   text-transform: uppercase;
   transition: all 0.2s;
 }
+.apostrophe-marker {
+  font-size: 30px;
+  font-weight: 800;
+  color: #aaa;
+  align-self: center;
+  padding: 0 2px;
+  user-select: none;
+}
 .letter-block.filled {
   border-color: #4caf50;
   background-color: #fff;
