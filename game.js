@@ -15,14 +15,14 @@ function enterApp() {
 let lists = [];
 let currentListId = null;
 
-const LIST_VERSION = "summer2";
+const LIST_VERSION = "summer2b";
 
 let defaultLists = [
-  { id: "list_1", name: "Week 2", words: ["cats","dogs","shops","rocks","pigs","rooms","birds","rats","i'm","don't"] },
-  { id: "list_2", name: "Week 3", words: ["catches","watches","washes","fetches","bunches","buzzes","fusses","stitches","time","about"] },
-  { id: "list_3", name: "Week 4", words: ["helping","helped","helper","playing","played","player","quicker","quickest","day","came"] },
-  { id: "list_4", name: "Week 5", words: ["football","playground","farmyard","bedroom","blackberry","armchair","bedtime","airport","make","very"] },
-  { id: "list_5", name: "Week 6", words: ["petals","fruit","roots","most","least","add","bulb","seed","subtract","branches"] },
+  { id: "list_1", name: "Week 1", words: ["all","small","always","almost","after","again","any","bath","friend","full"] },
+  { id: "list_2", name: "Week 2", words: ["tall","call","already","altogether","beautiful","because","behind","both","has","here"] },
+  { id: "list_3", name: "Week 3", words: ["face","city","pencil","certain","break","busy","child","children","house","once"] },
+  { id: "list_4", name: "Week 4", words: ["except","exercise","cycle","excellent","christmas","class","climb","clothes","said","says"] },
+  { id: "list_5", name: "Week 5", words: ["spotty","muddy","sunny","foggy","could","cold","door","even","there","they"] },
 ];
 
 let playList = [];
