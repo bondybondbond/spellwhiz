@@ -15,14 +15,16 @@ function enterApp() {
 let lists = [];
 let currentListId = null;
 
-const LIST_VERSION = "summer2b";
+const LIST_VERSION = "autumn2";
 
 let defaultLists = [
-  { id: "list_1", name: "Week 1", words: ["all","small","always","almost","after","again","any","bath","friend","full"] },
-  { id: "list_2", name: "Week 2", words: ["tall","call","already","altogether","beautiful","because","behind","both","has","here"] },
-  { id: "list_3", name: "Week 3", words: ["face","city","pencil","certain","break","busy","child","children","house","once"] },
-  { id: "list_4", name: "Week 4", words: ["except","exercise","cycle","excellent","christmas","class","climb","clothes","said","says"] },
-  { id: "list_5", name: "Week 5", words: ["spotty","muddy","sunny","foggy","could","cold","door","even","there","they"] },
+  { id: "list_1", name: "Week 1", words: ["runny","saggy","funny","yummy","every","everybody","eye","fast"] },
+  { id: "list_2", name: "Week 2", words: ["shiny","spicy","lazy","breezy","father","find","floor","gold"] },
+  { id: "list_3", name: "Week 3", words: ["crazy","simply","smoky","wavy","grass","great","half","hold"] },
+  { id: "list_4", name: "Week 4", words: ["sadly","loudly","bravely","slowly","hour","improve","kind","last"] },
+  { id: "list_5", name: "Week 5", words: ["quickly","quietly","kindly","normally","many","mind","money","must"] },
+  { id: "list_6", name: "Week 6", words: ["know","knot","knight","knife","move","mr","mrs","old"] },
+  { id: "list_7", name: "Week 7", words: ["knew","kneel","knock","knead","only","parents","pass","past"] },
 ];
 
 let playList = [];
