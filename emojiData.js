@@ -1161,7 +1161,7 @@ const phoneticSounds = {
     pitch: 1.0,
   },
   C: {
-    sound: "k", // Hard C usually
+    sound: "see", // Letter name (a lone "c" is not read reliably)
     isVowel: false,
     rate: 1.0,
     pitch: 1.0,
@@ -1245,7 +1245,7 @@ const phoneticSounds = {
     pitch: 1.0,
   },
   Q: {
-    sound: "k", // "kw" often fails on single char engines, "k" is safer
+    sound: "queue", // Letter name (a lone "q" is not read reliably)
     isVowel: false,
     rate: 1.0,
     pitch: 1.0,
