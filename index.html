@@ -10,7 +10,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <title>SpellWhiz</title>
-    <link rel="stylesheet" href="style.css?v=1.24" />
+    <link rel="stylesheet" href="style.css?v=1.29" />
+    <link rel="stylesheet" href="crossword.css?v=1.29" />
     <link rel="icon" type="image/png" href="icon.png" />
   </head>
   <body>
@@ -76,8 +77,46 @@
             </div>
 
             <button class="btn-primary" onclick="initGame()">
-              Start Game ▶️
+              📝 Spelling Practice
             </button>
+            <button
+              class="btn-crossword hidden"
+              id="btn-crossword"
+              onclick="openCrossword()"
+            >
+              🧩 Crossword Challenge
+            </button>
+            <div id="cw-hint" class="hidden">
+              Restore the original words to play Crossword.
+            </div>
+          </div>
+        </div>
+
+        <div id="crossword-screen" class="hidden">
+          <div id="cw-topbar">
+            <button id="cw-menu-btn" onclick="exitCrossword()">↩️ Menu</button>
+            <div id="cw-title">Week 1</div>
+            <div id="cw-progress">0/0</div>
+          </div>
+          <div id="cw-grid-wrap"><div id="cw-grid"></div></div>
+          <div id="cw-clue-row">
+            <span id="cw-clue-emoji"></span>
+            <button id="cw-hear-btn" onclick="speakCwWord()" aria-label="Hear the word">🔊</button>
+            <div id="cw-preview" class="idle"></div>
+          </div>
+          <div id="cw-wheel">
+            <svg id="cw-lines" xmlns="http://www.w3.org/2000/svg">
+              <polyline id="cw-line" points="" />
+            </svg>
+            <button id="cw-shuffle" onclick="shuffleCwWheel()" aria-label="Shuffle letters">🔀</button>
+          </div>
+          <div id="cw-done" class="hidden">
+            <div class="cw-done-card">
+              <div style="font-size: 56px">🎉</div>
+              <h2>Puzzle Complete!</h2>
+              <button class="btn-primary" onclick="replayCrossword()">Play Again 🔁</button>
+              <button class="btn-primary cw-done-btn" onclick="exitCrossword()">Done</button>
+            </div>
           </div>
         </div>
 
@@ -160,7 +199,9 @@
         </div>
       </div>
     </div>
-    <script src="emojiData.js?v=1.24"></script>
-    <script src="game.js?v=1.24"></script>
+    <script src="emojiData.js?v=1.29"></script>
+    <script src="crosswordData.js?v=1.29"></script>
+    <script src="game.js?v=1.29"></script>
+    <script src="crossword.js?v=1.29"></script>
   </body>
 </html>

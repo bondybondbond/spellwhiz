@@ -365,6 +365,7 @@ function renderSetupList() {
     createRowUI(index, w);
   });
   updateAddButtonState();
+  if (typeof refreshCrosswordButton === "function") refreshCrosswordButton();
 }
 
 function createRowUI(index, val) {
@@ -384,6 +385,7 @@ function createRowUI(index, val) {
 function autoSave() {
   updateCurrentListObject();
   localStorage.setItem("spellWhizLists", JSON.stringify(lists));
+  if (typeof refreshCrosswordButton === "function") refreshCrosswordButton();
 }
 
 function deleteRow(btn) {

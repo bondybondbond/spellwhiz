@@ -47,8 +47,14 @@ $ARGUMENTS
   - The first week's words are listed with emojis (not ❓)
 - If anything looks wrong, fix it before continuing
 
+### 4b. Generate crosswords for the new weeks
+- For each new week, run `node tools/gen-crossword.js "Week N" word1 word2 ...` (words exactly as in `defaultLists`)
+- If it exits non-zero (layout failed validation), just re-run it — it is random
+- Paste each printed block into the `crosswordPuzzles` array in `crosswordData.js`, then run `node tools/validate-crossword.js` (must say `ok` for every week)
+- Prefer layouts that are no taller than 11 rows so grid squares stay tappable on phones
+
 ### 5. Commit to git
-- Stage only `game.js` and `emojiData.js`
+- Stage only `game.js`, `emojiData.js` and `crosswordData.js`
 - Commit with message: `Add Week X/Y/Z words and update default lists`
 - Push to origin
 
@@ -58,8 +64,9 @@ $ARGUMENTS
 - Use a short label describing the change (e.g. `week2-4`, `new-words`)
 - Run:
   ```
-  powershell Compress-Archive -Path index.html,game.js,emojiData.js,style.css,wizard-mascot.jpg,wizard-perfect.jpg -DestinationPath SpellWhiz_vX.XX_<label>.zip -Force
+  powershell Compress-Archive -Path index.html,game.js,emojiData.js,crossword.js,crosswordData.js,crossword.css,style.css,wizard-mascot.jpg,wizard-perfect.jpg -DestinationPath SpellWhiz_vX.XX_<label>.zip -Force
   ```
+- Also bump the `?v=` cache-busting number on every asset in `index.html` so players don't get stale files
 - Report the filename and size to the user
 
 ## Rules
