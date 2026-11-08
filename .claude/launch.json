@@ -4,7 +4,7 @@
     {
       "name": "spellingwhiz",
       "runtimeExecutable": "node",
-      "runtimeArgs": ["-e", "require('http').createServer((req,res)=>{const fs=require('fs'),path=require('path');let u=req.url.split('?')[0];let f=path.join('C:/apps/spellingwhiz',u==='/'?'index.html':u);fs.readFile(f,(e,d)=>{if(e){res.writeHead(404);res.end();}else{const ext=path.extname(f);const t={'html':'text/html','js':'application/javascript','css':'text/css','jpg':'image/jpeg','png':'image/png'}[ext.slice(1)]||'text/plain';res.writeHead(200,{'Content-Type':t});res.end(d);}});}).listen(5500,()=>console.log('ready'))"],
+      "runtimeArgs": ["tools/dev-server.js", "5500"],
       "port": 5500
     }
   ]
